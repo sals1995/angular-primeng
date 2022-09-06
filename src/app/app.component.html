@@ -2,4 +2,7 @@
 <p>
   Start editing to see some magic happen :)
 </p>
-<button pButton pRipple label="click me"></button>
+<p-calendar [(ngModel)]="dateSelected" [inline]="true"  (onSelect)="selectingDate()">
+<ng-template pTemplate="date" let-date >
+<span [ngStyle]="{textDecoration: (date.day < 21 && date.day > 10) ? 'line-through' : 'inherit'}">{{date.day}}</span>
+</ng-template></p-calendar>
